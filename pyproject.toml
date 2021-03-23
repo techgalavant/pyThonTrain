@@ -2,7 +2,7 @@
 name = "halffarflungtypes"
 version = "0.1.0"
 description = ""
-authors = ["Your Name <you@example.com>"]
+authors = ["Mike Fallon <tech.galavant@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
