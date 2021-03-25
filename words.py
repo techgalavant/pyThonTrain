@@ -8,12 +8,12 @@ def fetch_words():
         line_words = line.decode('utf-8').split()
         for word in line_words:
             story_words.append(word)
-
-
+        
 #        if 'it' in story_words:
 #          story_words.replace("that")
 
     story.close()
+    story_words[10] = 'Barsha'
 
     for word in story_words:
         print(word)

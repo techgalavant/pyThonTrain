@@ -17,6 +17,7 @@ def db_test():
     value2 = db["number"]
     print(value2)
 
+
 if __name__ == '__main__':
     db_test()
 ## https://pypi.org/project/firebase/
