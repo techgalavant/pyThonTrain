@@ -1,7 +1,10 @@
 #name = input('What is your name?\n')
 #print('Hi, %s.' % name)
 
-#from words import fetch_words
+from words import *
+website = input('Website URL\n')
+
+main(website)
 
 #fetch_words()
 
