@@ -20,5 +20,5 @@ def db_test():
 
 if __name__ == '__main__':
     db_test()
-## https://pypi.org/project/firebase/
-## https://firebase.googleblog.com/2017/07/accessing-database-from-python-admin-sdk.html
+# https://pypi.org/project/firebase/
+# https://firebase.googleblog.com/2017/07/accessing-database-from-python-admin-sdk.html
