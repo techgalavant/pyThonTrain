@@ -1,6 +1,8 @@
 import sys
 from urllib.request import urlopen
 
+# URL to try http://sixty-north.com/c/t.txt
+# URL to try https://shakespeare.folger.edu/shakespeares-works/hamlet/
 
 def fetch_words(url):
     story = urlopen(url)
@@ -23,8 +25,6 @@ def fetch_words(url):
                     story_words.append(swap_dict.get(word, word))
 
             replace_words(word)
-
-            # story_words.append(word)
 
     story.close()
     
