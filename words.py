@@ -6,22 +6,31 @@ def fetch_words(url):
     story = urlopen(url)
     story_words = []
     
-    # replace some words - with help from https://www.geeksforgeeks.org/python-replace-words-from-dictionary/
-    # replacement words
-    swap_dict = {"noisiest" : "loude$t", "everything" : "allthings", "winter" : "Wintear", "for" : "four"}
+    # replacement words - with help from https://www.geeksforgeeks.org/python-replace-words-from-dictionary/
+    swap_dict = {"noisiest" : "loude$t", "everything" : "allthings", "winter" : "Wintear", "for" : "four", "it" : "IT"}
+    word_count = 0
     for line in story:
         line_words = line.decode('utf-8').split()
         for word in line_words:
+            word_count += line_words.count(word)
             
-            # find words to swap from swap_dict
-            story_words.append(swap_dict.get(word, word))
+            # replace every 5th word with "Barsha"
+            def replace_words(word):
+                if word_count % 5 == 0:
+                    story_words.append("Barsha")
+                else:
+                    # find words to swap from swap_dict
+                    story_words.append(swap_dict.get(word, word))
+
+            replace_words(word)
 
             # story_words.append(word)
 
     story.close()
-    story_words[10] = 'Barsha' # just replace the 11th word with 'Barsha'
-    return story_words
+    
+    story_words.append(str(word_count) + " words in this file.")
 
+    return story_words
 
 def print_items(items):
     for item in items:
