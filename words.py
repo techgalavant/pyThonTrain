@@ -1,5 +1,6 @@
 import sys
 from urllib.request import urlopen
+from icecream import ic
 
 # URL to try http://sixty-north.com/c/t.txt
 # URL to try https://shakespeare.folger.edu/shakespeares-works/hamlet/
@@ -18,7 +19,7 @@ def fetch_words(url):
         "it": "IT"
     }
     word_count = 0
-    swap_number = 0 # HW assignment to replace words with ints in the list
+    swap_number = 0  # HW assignment to replace words with ints in the list
 
     for line in story:
         line_words = line.decode('utf-8').split()
@@ -47,6 +48,7 @@ def fetch_words(url):
 
 def print_items(items):
     for item in items:
+        ic(item)
         print(item)
 
 
