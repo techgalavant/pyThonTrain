@@ -5,7 +5,6 @@ from icecream import ic
 # URL to try http://sixty-north.com/c/t.txt
 # URL to try https://shakespeare.folger.edu/shakespeares-works/hamlet/
 
-
 def fetch_words(url):
     story = urlopen(url)
     story_words = []
