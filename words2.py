@@ -59,7 +59,6 @@ def swap_word(word):
 
 def print_items(items):
     for item in items:
-        #ic(item)
         print(item)
 
 
