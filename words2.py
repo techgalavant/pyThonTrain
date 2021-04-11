@@ -26,8 +26,8 @@ def fetch_words(url):
                 swap_number += 10
                 story_words.append(str(swap_number))
             else:  # amend the word to the list
+                # use a function to swap out some words in the swap_dict list
                 swap_word(word)
-                # uses function to swap out some words in the swap_dict
                 story_words.append(word)
 
     story.close()
@@ -51,9 +51,8 @@ def swap_word(word):
         "stomach": "guts",
         "tragedies": "tr@gedie$"
     }
-    newword = swap_dict.get(word, word)
-    if word == newword:
-        word.replace(word,newword)
+    word = swap_dict.get(word, word)
+    ic(word)
 
     return (word)
 
