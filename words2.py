@@ -9,26 +9,6 @@ from icecream import ic
 # URL to try https://ecspan.com/text/lolly1.txt
 
 
-# function to swap out certain words
-# Replaces inner nested loop in fetch_words from words.py
-def swap_word(newword):
-    swap_dict = {
-        "noisiest": "loude$t",
-        "everything": "allthings",
-        "winter": "Wintear",
-        "for": "four",
-        "it": "IT",
-        "needless": "needful",
-        "describe": "illustrate",
-        "stomach": "guts",
-        "tragedies": "tr@gedie$"
-    }
-    newword = swap_dict.get(newword, newword)
-    #ic(newword)
-
-    return (newword)
-
-
 def fetch_words(url):
     story = urlopen(url)
     story_words = []
@@ -54,6 +34,26 @@ def fetch_words(url):
     story_words.append(str(word_count) + " words in this file.")
 
     return story_words
+
+
+# function to swap out certain words
+# Replaces inner nested loop in fetch_words from words.py
+def swap_word(newword):
+    swap_dict = {
+        "noisiest": "loude$t",
+        "everything": "allthings",
+        "winter": "Wintear",
+        "for": "four",
+        "it": "IT",
+        "needless": "needful",
+        "describe": "illustrate",
+        "stomach": "guts",
+        "tragedies": "tr@gedie$"
+    }
+    newword = swap_dict.get(newword, newword)
+    #ic(newword)
+
+    return (newword)
 
 
 def print_items(items):
