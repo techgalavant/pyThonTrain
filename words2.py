@@ -9,6 +9,26 @@ from icecream import ic
 # URL to try https://ecspan.com/text/lolly1.txt
 
 
+# function to swap out certain words
+# Replaces inner nested loop in fetch_words from words.py
+def swap_word(newword):
+    swap_dict = {
+        "noisiest": "loude$t",
+        "everything": "allthings",
+        "winter": "Wintear",
+        "for": "four",
+        "it": "IT",
+        "needless": "needful",
+        "describe": "illustrate",
+        "stomach": "guts",
+        "tragedies": "tr@gedie$"
+    }
+    newword = swap_dict.get(newword, newword)
+    #ic(newword)
+
+    return (newword)
+
+
 def fetch_words(url):
     story = urlopen(url)
     story_words = []
@@ -25,36 +45,15 @@ def fetch_words(url):
             if word_count % 5 == 0:
                 swap_number += 10
                 story_words.append(str(swap_number))
-            else:  # amend the word to the list
-                # use a function to swap out some words in the swap_dict list
-                swap_word(word)
-                story_words.append(word)
+            else:  # amend the word to the list, but swap out some words
+                # ic(swap_word(word))
+                story_words.append(swap_word(word))
 
     story.close()
 
     story_words.append(str(word_count) + " words in this file.")
 
     return story_words
-
-
-# function to swap out certain words
-# Replaces inner nested loop in fetch_words from words.py
-def swap_word(word):
-    swap_dict = {
-        "noisiest": "loude$t",
-        "everything": "allthings",
-        "winter": "Wintear",
-        "for": "four",
-        "it": "IT",
-        "needless": "needful",
-        "describe": "illustrate",
-        "stomach": "guts",
-        "tragedies": "tr@gedie$"
-    }
-    word = swap_dict.get(word, word)
-    ic(word)
-
-    return (word)
 
 
 def print_items(items):
