@@ -12,7 +12,14 @@
 
 # db_test()
 
-from words2 import *
-website = input('Website URL to try\n')
+# from words2 import *
+# website = input('Website URL to try\n')
 
-main(website)
+# main(website)
+
+from lists_with_strings import *
+
+# let user input their own values
+userInputs = input('Enter some values separated by a space:\n')
+
+main(userInputs)
