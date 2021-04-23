@@ -17,9 +17,13 @@
 
 # main(website)
 
-from lists_with_strings import *
+#from lists_with_strings import *
 
 # let user input their own values
-userInputs = input('Enter some values separated by a space:\n')
+#userInputs = input('Enter some values separated by a space:\n')
 
-main(userInputs)
+#main(userInputs)
+
+from exceptional import convert
+convert("one three three seven".split())
+
